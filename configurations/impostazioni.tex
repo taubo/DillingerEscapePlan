@@ -1,0 +1,75 @@
+\documentclass[pdftex,a4paper,12pt,twoside,titlepage,italian]{report}
+
+\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage[pdftex,bookmarksnumbered,colorlinks]{hyperref}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{lettrine}
+%\usepackage{enumitem}q
+%\usepackage[a4paper,top=2.5cm,left=1.5cm,right=4cm,bottom=2.5cm]{geometry}
+%\usepackage[width=14cm,top=2.5cm,left=1.5cm,right=4cm,bottom=2.5cm]{geometry}
+%\usepackage[text={1.5cm,12cm},centering]{geometry}
+
+\newcommand{\nota}[1]{{\marginpar{\scriptsize{\textsf{\textbf{\textcolor{gray}{#1}}}}}}}
+\newcommand{\sezione}[1]{\section*{\textcolor{theme-color!80}{#1}}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\en}[1]{\emph{#1}}
+\newcommand{\enf}[1]{\textcolor{theme-color!80}{\emph{#1}}}
+\newcommand{\cita}[1]{\begin{quote}\textit{#1}\end{quote}}
+
+\renewcommand{\LettrineFontHook}{\color[gray]{0.5}}
+\renewcommand*\familydefault{\sfdefault}
+\renewcommand*\labelitemi{$\textcolor{black!30}{\bullet}$}
+
+\hypersetup{citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
+
+\usetikzlibrary{backgrounds}
+
+%~ \definecolor{theme-color}{RGB}{56,80,255}
+\definecolor{theme-color}{RGB}{153,204,0}
+
+% ESEMPIO USO GEOMETRIY
+\usepackage{geometry}
+
+% \geometry{includemp} %riserva lo spazio per l'intestazione, le note di pagina e le note laterali nel total body
+%\geometry{nohead} %elimina lo spazio per le intestazioni della pagina
+%\geometry{nofoot} %elimina lo spazio per le note a piè di pagina
+%\geometry{nohead,includemp} %elimina lo spazio per l'intestazione ma non quello per le note laterali
+% \geometry{paperheigth=25cm} %specifica l'altezza del foglio
+% \geometry{paperwidth=16cm} %specifica la larghezza del foglio
+%\geometry{height=25cm} %specifica altezza del total body del documento
+%\geometry{width=16cm} %specifica la larghezza del total body del documento
+%\geometry{textheight=25cm} %spcifica la altezza della parte del total body scrivibile se specificato con height questo ultimo è ignorato
+%\geometry{textwidth=16cm} 
+
+
+%\geometry{left=4cm} %specifica la distanza tra il margine sinistro del foglio e il total body
+%\geometry{right=4cm} %specifica la distanza tra il margine destro del foglio e il total body
+\geometry{top=3cm} %specifica la distanza tra il margine alto del documento e il total body
+\geometry{bottom=3cm} %specifica la distanza tra il margine basso del documento e il total boby
+\geometry{headheight=0.5cm} %per specificare la altezza dell'intestazione del documento
+\geometry{headsep=1cm} %per specificare la lunghezza della separazione tra il body e l'intestazione
+\geometry{footskip=1cm} %per specificare l'altezza delle note di pagina del documento
+\geometry{marginparwidth=2.5cm} %per specificare la dimensione del margine per le note laterale
+\geometry{marginparsep=.25cm}
+
+\pagestyle{fancy}
+
+%impostazioni fancyhdr
+%\rhead{\}
+%\cfoot{}
+\lfoot{\textit{\small{Nome Cognome}}}
+

@@ -1,13 +1,8 @@
--dividere in cartelle : capitoli dentro chapters, impostazioni dentro 
-un'altra cartella, bibliografia in un'altra, appendici in un'altra ancora
-e così via...
-
 -impostare bibtex
-
--faccio un make examples e mi esegue un esempio completo con tutte
-le feature!!!
 
 -svuotare il layout
 
--fare indice con i link
+-fare indice con i link cliccabili
 
+-fare un make examples che crei un esempio completo con tutte
+le feature!!!

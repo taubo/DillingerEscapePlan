@@ -4,7 +4,11 @@ DEPS = chapters/cap01.tex
 
 all: ${target}.pdf
 
-${target}.pdf: ${target}.tex $(DEPS)
+${target}.pdf: ${target}.tex bib/bibliography.bib $(DEPS)
+	pdflatex ${target}.tex
+	
+	bibtex ${target}
+	
 	pdflatex ${target}.tex
 	pdflatex ${target}.tex
 

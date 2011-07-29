@@ -1,6 +1,0 @@
-\select@language {italian}
-\contentsline {chapter}{Sommario}{2}{chapter*.3}
-\contentsline {chapter}{\numberline {1}Qualcosa}{3}{chapter.1}
-\contentsline {chapter}{Conclusioni}{5}{chapter*.4}
-\contentsline {chapter}{\numberline {A}Ambiente LAMP}{6}{appendix.A}
-\contentsline {chapter}{Bibliografia}{6}{appendix.A}

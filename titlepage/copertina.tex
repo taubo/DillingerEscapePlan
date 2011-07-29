@@ -1,40 +1,140 @@
 %questo documento, opportunamente modificato, produce la copertina della tesi
-\titlepage
-\begin{center}
-\Large{\bfseries{UNIVERSIT\'A DEGLI STUDI DI PADOVA}}\\
-\vspace{5mm}
-Facolt\'a di Ingegneria
-\end{center}
 
-\begin{figure}[htbp]
-\includegraphics[width=30mm]{images/unipd.png} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\includegraphics[width=30mm]{images/logodei.png}
-\end{figure}
-\begin{center}
-%%     \bfseries{Università degli Studi di Padova}\\
-%%     \vspace{5mm}
-%%     Facoltà di Ingegneria\\
-\vspace{5mm}
-\small{Corso di Laurea Triennale in Ingengeria Informatica}
-\vspace{15mm}
-\\
+%\newcommand{\FigVertScaled}[5]{\FigRotatedScaled{#1}{#2}{#3}{#4}{#5}}
+%\newcommand{\GMAuthor}{}                    % all
+%\newcommand{\GMTitle}{}                     % all
+%\newcommand{\GMSubtitle}{}                  % [work], thesis
+%\newcommand{\GMDate}{\today}                % elaborato, thesis 
+%\newcommand{\GMAdvisor}{}                   % tesi, phdthesis
+%\newcommand{\GMCoAdvisor}{}                 % [tesi]
+%\newcommand{\GMCourse}{}                    % tesi
+%\newcommand{\GMphdCourse}{}                 % phdthesis
+%\newcommand{\GMDirector}{}                  % phdthesis
+%
+% ---user commands: they change the value of a corresponding macro-key 
+%
+%\newcommand{\Author}[1]{\renewcommand{\GMAuthor}{#1}}
+%\newcommand{\Title}[1]{\renewcommand{\GMTitle}{#1}}
+%\newcommand{\Subtitle}[1]{\renewcommand{\GMSubtitle}{#1}}
+%\newcommand{\Date}[1]{\renewcommand{\GMDate}{#1}}
+%\newcommand{\Advisor}[1]{\renewcommand{\GMAdvisor}{#1}}
+%\newcommand{\CoAdvisor}[1]{\renewcommand{\GMCoAdvisor}{#1}}
+%\newcommand{\Course}[1]{\renewcommand{\GMCourse}{#1}}
+%\newcommand{\PhDCourse}[1]{\renewcommand{\GMphdCourse}{#1}} %CicloDottorato
+%\newcommand{\Director}[1]{\renewcommand{\GMDirector}{#1}}
 
-\bfseries{\LARGE{Titolo Tesi}}\\
-\vspace{1cm}
-\end{center}
-\hspace{2cm} Relatore: Nome Relatore
-  \\
+\Author{Nome Cognome Laureando} 
 
+\Title{Titolo Tesi}
+%\Subtitle{Un approccio tecnologicamente nuovo}
+
+\Course{Corso di Laurea}
+\Advisor{Nome Cognome Relatore} 
+\CoAdvisor{Nome Cognome Correlatore}
+\Date{GG MM AA}
+
+%
+% e.g. the user modify \GMAuthor by invoking \Autor{new value}
+% othe class macros can use the value \GMAutor defined by the \Autor{} macro
+% 
+
+% --- defalt values for commands --- --- ---
+% they may be re-defined by user
+%\newcommand{\Cover}{} 
+
+% the command \PageTitleEnd{} should be called at the end of page tile defintion, 
+% just after '\end{pagetitle}'
+%\newcommand{\CoverEnd}{%
+%\renewcommand{\thepage}{}%        % nessuna numerazione di pagina
+%\newpage
+%}
+%\renewcommand{\Cover}{%
+\begin{titlepage}
+  \begin{center}
+     \begin{figure}[h]
+        \centering
+        \includegraphics[width=3cm]{images/unipd.png}
+     \end{figure}
+    {\Large \bf Universit\`a degli Studi di Padova}\\
+    \vspace{0.2cm}
+    {\large Facolt\`a di Ingegneria}\\
+    \vspace{0.2cm}
+    {\ifthenelse{\equal{\GMCourse}{}} {\mbox{}} {\GMCourse{} } }\\
+    \vspace{2cm}
+    {Tesi di Laurea Magistrale\\ 
+    %\vspace*{\stretch{1}}%
+    \vspace{1cm}}
+    {\Huge \bf \GMTitle{} }\\
+    % sottotitolo
+    \vspace{.5cm}
+    {{\ifthenelse{\equal{\GMSubtitle}{}}
+        { \mbox{}\\ }% sottotitolo vuoto
+        { {\LARGE \sf \bf  \GMSubtitle{} \\ }} % sottotitolo
+    }}%
+  %\vspace*{\stretch{2}}
+  \end{center}
+  \vspace{4cm}
+  \begin{flushleft}
+     \begin{tabular}{ll}
+       {\bf Relatore:} & \GMAdvisor{}\\
+        \ifthenelse{\equal{\GMCoAdvisor}{}} %
+           {\mbox{} \tabularnewline }% \Cotutor vuoto
+           {{\bf Correlatore: } & \GMCoAdvisor{} \tabularnewline }
+     \end{tabular}
+  \end{flushleft}
   \vspace{1cm}
-  \hspace{7cm} Nome Laureando
+  \begin{flushright}
+    {\bf Laureando:} \GMAuthor{}
+  \end{flushright}
+  \vspace{1cm}
+  \begin{center}
+    {\small \GMDate{}}
+  \end{center}
+\end{titlepage}
+%\CoverEnd
+%}
 
-  \hspace{7cm} \small{Matricola: Numero Matricola/Sigla Corso di Laurea}
-  \\
-  % \vspace{3.5cm}
- \vfill
 
-\begin{center}
-Anno Accademico Cifra Idebtificante Anno Accademico Corrente\\
-\end{center}
 
-\clearpage
+
+
+%OLD TITLEPAGE 
+%\titlepage
+%\begin{center}
+%\Large{\bfseries{UNIVERSIT\'A DEGLI STUDI DI PADOVA}}\\
+%\vspace{5mm}
+%Facolt\'a di Ingegneria
+%\end{center}
+%
+%\begin{figure}[htbp]
+%\includegraphics[width=30mm]{images/unipd.png} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+%\includegraphics[width=30mm]{images/logodei.png}
+%\end{figure}
+%\begin{center}
+%     \bfseries{Università degli Studi di Padova}\\
+%     \vspace{5mm}
+%     Facoltà di Ingegneria\\
+%\vspace{5mm}
+%\small{Corso di Laurea Triennale in Ingengeria Informatica}
+%\vspace{15mm}
+%\\
+%
+%\bfseries{\LARGE{Titolo Tesi}}\\
+%\vspace{1cm}
+%\end{center}
+%\hspace{2cm} Relatore: Nome Relatore
+  %\\
+%
+  %\vspace{1cm}
+  %\hspace{7cm} Nome Laureando
+%
+  %\hspace{7cm} \small{Matricola: Numero Matricola/Sigla Corso di Laurea}
+  %\\
+   %\vspace{3.5cm}
+ %\vfill
+%
+%\begin{center}
+%Anno Accademico Cifra Idebtificante Anno Accademico Corrente\\
+%\end{center}
+%
+%\clearpage

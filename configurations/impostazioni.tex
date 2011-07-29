@@ -42,6 +42,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{lettrine}
+\usepackage{ifthen}
 %\usepackage{enumitem}q
 %\usepackage[a4paper,top=2.5cm,left=1.5cm,right=4cm,bottom=2.5cm]{geometry}
 %\usepackage[width=14cm,top=2.5cm,left=1.5cm,right=4cm,bottom=2.5cm]{geometry}
@@ -90,6 +91,7 @@
 %\geometry{marginparwidth=2.5cm} %per specificare la dimensione del margine per le note laterale
 %\geometry{marginparsep=.25cm}
 
+%page numbering conf
 \newcommand{\prefacePageNumbering}{
   \pagenumbering{Roman} \setcounter{page}{1} 
 }
@@ -98,6 +100,31 @@
   \renewcommand{\thepage}{\arabic{page}} \setcounter{page}{1}
   \pagestyle{headings}
 }
+
+%titlepage conf
+\newcommand{\FigVertScaled}[5]{\FigRotatedScaled{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\GMAuthor}{}                    % all
+\newcommand{\GMTitle}{}                     % all
+\newcommand{\GMSubtitle}{}                  % [work], thesis
+\newcommand{\GMDate}{\today}                % elaborato, thesis 
+\newcommand{\GMAdvisor}{}                   % tesi, phdthesis
+\newcommand{\GMCoAdvisor}{}                 % [tesi]
+\newcommand{\GMCourse}{}                    % tesi
+\newcommand{\GMphdCourse}{}                 % phdthesis
+\newcommand{\GMDirector}{}                  % phdthesis
+%
+% ---user commands: they change the value of a corresponding macro-key 
+%
+\newcommand{\Author}[1]{\renewcommand{\GMAuthor}{#1}}
+\newcommand{\Title}[1]{\renewcommand{\GMTitle}{#1}}
+\newcommand{\Subtitle}[1]{\renewcommand{\GMSubtitle}{#1}}
+\newcommand{\Date}[1]{\renewcommand{\GMDate}{#1}}
+\newcommand{\Advisor}[1]{\renewcommand{\GMAdvisor}{#1}}
+\newcommand{\CoAdvisor}[1]{\renewcommand{\GMCoAdvisor}{#1}}
+\newcommand{\Course}[1]{\renewcommand{\GMCourse}{#1}}
+\newcommand{\PhDCourse}[1]{\renewcommand{\GMphdCourse}{#1}} %CicloDottorato
+\newcommand{\Director}[1]{\renewcommand{\GMDirector}{#1}}
+
 
 %\pagestyle{fancy}
 

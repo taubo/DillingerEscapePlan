@@ -8,6 +8,30 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\renewcommand{\subsectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} %clears all header and footer fields
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+% redefine plain style for pagestyle
+\fancypagestyle{plain}{%
+   \fancyhead{} % get rid of headers
+   \renewcommand{\headrulewidth}{0pt} % and the line
+}
+% redefine headings style for pagestyle
+\fancypagestyle{headings}{%
+   \fancyhead{} % get rid of headers
+   \fancyhead[LE,RO]{\bfseries\thepage}
+   \fancyhead[LO]{\bfseries\rightmark}
+   \fancyhead[RE]{\bfseries\leftmark}
+}
+% on float pages do not print the heading line
+\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+
 \usepackage{listings}
 \usepackage{enumitem}
 \usepackage{amssymb}
@@ -42,7 +66,7 @@
 \definecolor{theme-color}{RGB}{153,204,0}
 
 % ESEMPIO USO GEOMETRIY
-\usepackage{geometry}
+%\usepackage{geometry}
 
 % \geometry{includemp} %riserva lo spazio per l'intestazione, le note di pagina e le note laterali nel total body
 %\geometry{nohead} %elimina lo spazio per le intestazioni della pagina
@@ -58,18 +82,27 @@
 
 %\geometry{left=4cm} %specifica la distanza tra il margine sinistro del foglio e il total body
 %\geometry{right=4cm} %specifica la distanza tra il margine destro del foglio e il total body
-\geometry{top=3cm} %specifica la distanza tra il margine alto del documento e il total body
-\geometry{bottom=3cm} %specifica la distanza tra il margine basso del documento e il total boby
-\geometry{headheight=0.5cm} %per specificare la altezza dell'intestazione del documento
-\geometry{headsep=1cm} %per specificare la lunghezza della separazione tra il body e l'intestazione
-\geometry{footskip=1cm} %per specificare l'altezza delle note di pagina del documento
-\geometry{marginparwidth=2.5cm} %per specificare la dimensione del margine per le note laterale
-\geometry{marginparsep=.25cm}
+%\geometry{top=3cm} %specifica la distanza tra il margine alto del documento e il total body
+%\geometry{bottom=3cm} %specifica la distanza tra il margine basso del documento e il total boby
+%\geometry{headheight=0.5cm} %per specificare la altezza dell'intestazione del documento
+%\geometry{headsep=1cm} %per specificare la lunghezza della separazione tra il body e l'intestazione
+%\geometry{footskip=1cm} %per specificare l'altezza delle note di pagina del documento
+%\geometry{marginparwidth=2.5cm} %per specificare la dimensione del margine per le note laterale
+%\geometry{marginparsep=.25cm}
 
-\pagestyle{fancy}
+\newcommand{\prefacePageNumbering}{
+  \pagenumbering{Roman} \setcounter{page}{1} 
+}
+
+\newcommand{\resetPageNumbering}{
+  \renewcommand{\thepage}{\arabic{page}} \setcounter{page}{1}
+  \pagestyle{headings}
+}
+
+%\pagestyle{fancy}
 
 %impostazioni fancyhdr
 %\rhead{\}
 %\cfoot{}
-\lfoot{\textit{\small{Nome Cognome}}}
+%\lfoot{\textit{\small{Nome Cognome}}}
 
